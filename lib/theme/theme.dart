@@ -60,6 +60,7 @@ class AppTheme {
           onPrimary: AppColors.white,
           onSecondary: AppColors.white,
           error: AppColors.negative_2),
+      scaffoldBackgroundColor: AppColors.darkGreen_0,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           padding:

@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
+import "package:get/get.dart";
 import 'package:mentalwaev/theme/theme.dart';
 import 'package:mentalwaev/utils/spaces.dart';
+import 'package:mentalwaev/views/home/home.dart';
 import 'package:mentalwaev/widgets/auth_cards.dart';
 
 class SignUp extends StatelessWidget {
@@ -22,9 +24,11 @@ class SignUp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              authCards(context, "icon", "text"),
+              authCards(context, "google.png", "Sign in with Google", () {
+                Get.to(() => Home());
+              }),
               SpaceConst.verticalOne,
-              authCards(context, "icon", "text"),
+              authCards(context, null, "Other methods coming soon", () {}),
               // Container(height: 50, width: 50, color: Colors.white)
             ],
           ),
