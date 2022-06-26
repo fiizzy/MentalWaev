@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:mentalwaev/theme/theme.dart';
+import 'package:mentalwaev/utils/spaces.dart';
+import 'package:mentalwaev/widgets/auth_cards.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -9,9 +11,10 @@ class SignUp extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.darkGreen_0,
       body: Container(
+        padding: const EdgeInsets.only(left: 20, right: 20),
         decoration: const BoxDecoration(
             image: DecorationImage(
-          image: const AssetImage("/images/bg-wave.png"),
+          image: AssetImage("/images/bg-wave.png"),
           fit: BoxFit.cover,
           alignment: Alignment.bottomCenter,
         )),
@@ -19,8 +22,10 @@ class SignUp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(height: 50, width: 50, color: Colors.white),
-              Container(height: 50, width: 50, color: Colors.white)
+              authCards(context, "icon", "text"),
+              SpaceConst.verticalOne,
+              authCards(context, "icon", "text"),
+              // Container(height: 50, width: 50, color: Colors.white)
             ],
           ),
         ),
