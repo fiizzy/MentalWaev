@@ -11,6 +11,10 @@ class Info {
   static get deviceHeight => _height;
 }
 
+class Utils {
+  static final dialRectboxHeight = 226 / 700 * Info.deviceHeight;
+}
+
 class CustomCurvesProps {
   Rect bounds;
   double lFactor;

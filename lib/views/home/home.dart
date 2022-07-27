@@ -19,12 +19,24 @@ class Home extends StatelessWidget {
     final appBarHeight = appBar.preferredSize.height;
     return Scaffold(
       appBar: appBar,
-      body: Column(
-        children: [
-          SizedBox(height: 226 / 700 * Info.deviceHeight - appBarHeight),
-          const CustomCurveBoxes(),
-        ],
-      ),
+      body: Stack(children: [
+        Column(
+          children: [
+            SizedBox(height: Utils.dialRectboxHeight - appBarHeight),
+            const CustomCurveBoxes(),
+          ],
+        ),
+        Positioned(
+          top: Utils.dialRectboxHeight - 38,
+          left: Info.deviceWidth / 3,
+          child: Text(
+            'LIFETIME MEDITATION',
+            style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                  letterSpacing: 2,
+                ),
+          ),
+        ),
+      ]),
     );
   }
 }

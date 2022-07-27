@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentalwaev/utils/util.dart';
 import 'package:mentalwaev/widgets/custom_curve_painters.dart';
+import 'package:mentalwaev/widgets/custom_dial.dart';
 
 class CustomCurveBoxes extends StatelessWidget {
   const CustomCurveBoxes({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class CustomCurveBoxes extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: Info.deviceWidth,
-      height: 226 / 700 * Info.deviceHeight,
+      height: Utils.dialRectboxHeight,
       child: CustomPaint(
         painter: CustomCurvePainter(
           0,
@@ -18,10 +19,7 @@ class CustomCurveBoxes extends StatelessWidget {
           196 / 700 * Info.deviceHeight,
         ),
         child: const Center(
-          child: Text(
-            '',
-            style: TextStyle(color: Colors.lightBlue),
-          ),
+          child: CustomDial(),
         ),
       ),
     );

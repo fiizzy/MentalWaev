@@ -13,6 +13,7 @@ class AppColors {
   static const Color negative = Color(0xFFBC0000);
   static const Color negative_2 = Color(0xFFDDB3B3);
   static const Color positive = Color(0xFF009533);
+  static const Color goldenGlow = Color(0xFFFF9436);
 }
 
 TextTheme _buildTextTheme() {
@@ -26,9 +27,9 @@ TextTheme _buildTextTheme() {
     headline4: _style(48.0, null, fontFamily: 'Poppins-ExtraBold'),
     headline5: _style(22.0, FontWeight.w500),
     headline6: _style(18.0, FontWeight.w500),
-    bodyText1: _style(18.0, FontWeight.normal),
+    bodyText1: _style(30.0, FontWeight.normal, fontFamily: 'Poppins-Light'),
     bodyText2: _style(16.0, FontWeight.normal),
-    subtitle1: _style(14.0, FontWeight.normal),
+    subtitle1: _style(14.0, FontWeight.normal, fontFamily: 'Poppins-Light'),
     subtitle2: _style(12.0, FontWeight.w300),
     button: _style(18.0, FontWeight.normal),
     caption: _style(12.0, FontWeight.normal),
