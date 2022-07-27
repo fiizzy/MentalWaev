@@ -1,29 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:mentalwaev/enums/button_types.dart';
-import 'package:mentalwaev/utils/spaces.dart';
-import 'package:mentalwaev/widgets/button.dart';
+import 'package:mentalwaev/utils/util.dart';
 import 'package:mentalwaev/widgets/space_tag.dart';
+
+import '../../widgets/curve_line_boxes.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Info.setHeight = MediaQuery.of(context).size.height;
+    Info.setWidth = MediaQuery.of(context).size.width;
+    final appBar = AppBar(
+      leading: Container(),
+      title: spaceTag(context),
+      centerTitle: true,
+    );
+    final appBarHeight = appBar.preferredSize.height;
     return Scaffold(
-        appBar: AppBar(
-          leading: Container(),
-          title: spaceTag(context),
-          centerTitle: true,
-        ),
-        body: Stack(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Image.asset("images/wave-2.png")],
-            ),
-            Positioned(
+      appBar: appBar,
+      body: Column(
+        children: [
+          SizedBox(height: 226 / 700 * Info.deviceHeight - appBarHeight),
+          const CustomCurveBoxes(),
+        ],
+      ),
+    );
+  }
+}
+
+/*
+Positioned(
                 bottom: 10,
                 child: Container(
                   width: SpaceConst.deviceWidth(context),
@@ -31,7 +38,4 @@ class Home extends StatelessWidget {
                   child: button(context, "hearts.png", "New Mediation",
                       ButtonTypes.normal, () {}),
                 ))
-          ],
-        ));
-  }
-}
+*/

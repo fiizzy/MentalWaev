@@ -10,7 +10,7 @@ Widget spaceTag(BuildContext context) {
       children: [
         iconFramer("sun-setting.png"),
         SpaceConst.horizontalOne,
-        Text("Hannah's space")
+        const Text("Hannah's space")
       ],
     ),
   );
