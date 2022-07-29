@@ -16,7 +16,7 @@ class SignUp extends StatelessWidget {
         padding: const EdgeInsets.only(left: 20, right: 20),
         decoration: const BoxDecoration(
             image: DecorationImage(
-          image: AssetImage("/images/bg-wave.png"),
+          image: AssetImage("assets/images/bg-wave.png"),
           fit: BoxFit.cover,
           alignment: Alignment.bottomCenter,
         )),

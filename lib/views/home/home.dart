@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:mentalwaev/enums/button_types.dart';
 import 'package:mentalwaev/utils/spaces.dart';
 import 'package:mentalwaev/widgets/button.dart';
+import 'package:mentalwaev/widgets/confirmation_dialog_modal.dart';
 import 'package:mentalwaev/widgets/space_tag.dart';
 
 class Home extends StatelessWidget {
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Image.asset("images/wave-2.png")],
+              children: [Image.asset("assets/images/wave-2.png")],
             ),
             Positioned(
                 bottom: 10,
@@ -29,7 +30,17 @@ class Home extends StatelessWidget {
                   width: SpaceConst.deviceWidth(context),
                   padding: EdgeInsets.all(SpaceConst.padding_20),
                   child: button(context, "hearts.png", "New Mediation",
-                      ButtonTypes.normal, () {}),
+                      ButtonTypes.normal, () {
+                    ConfirmationDialog(
+                        context: context,
+                        confirmText: "Yes",
+                        cancelText: "Cancel",
+                        titleText: "Delete this preset?",
+                        onCancel: () {
+                          Navigator.of(context).pop();
+                        },
+                        onConfirm: () {});
+                  }),
                 ))
           ],
         ));
