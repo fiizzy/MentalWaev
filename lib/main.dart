@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme().themeData,
-      home: const SignUp(),
-      initialRoute: "/home",
+      initialRoute: "/",
       routes: {
-        '/Home': (context) => Home(),
+        '/': (ctx) => const SignUp(),
+        '/Home': (context) => const Home(),
         '/login': (context) => const SignUp()
       },
     );

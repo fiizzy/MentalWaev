@@ -16,7 +16,7 @@ class SignUp extends StatelessWidget {
         padding: const EdgeInsets.only(left: 20, right: 20),
         decoration: const BoxDecoration(
             image: DecorationImage(
-          image: AssetImage("/images/bg-wave.png"),
+          image: AssetImage("assets/images/bg-wave.png"),
           fit: BoxFit.cover,
           alignment: Alignment.bottomCenter,
         )),
@@ -25,7 +25,7 @@ class SignUp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               authCards(context, "google.png", "Sign in with Google", () {
-                Get.to(() => Home());
+                Get.to(() => const Home());
               }),
               SpaceConst.verticalOne,
               authCards(context, null, "Other methods coming soon", () {}),
