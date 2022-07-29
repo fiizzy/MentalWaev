@@ -25,7 +25,7 @@ class SignUp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               authCards(context, "google.png", "Sign in with Google", () {
-                Get.to(() => Home());
+                Get.to(() => const Home());
               }),
               SpaceConst.verticalOne,
               authCards(context, null, "Other methods coming soon", () {}),
