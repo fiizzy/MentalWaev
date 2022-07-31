@@ -29,19 +29,29 @@ class _MeditationTimerScreenState extends State<MeditationTimerScreen> {
               timeUnit: Container(),
             ),
             const Spacer(),
-            ElevatedButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  iconFramer('alarm_off.png', 18.0),
-                  const SizedBox(
-                    width: 14.0,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  primary: AppColors.negative,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                  Text(
-                    'Stop Session',
-                    style: Theme.of(context).textTheme.subtitle1,
-                  ),
-                ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    iconFramer('alarm_off.png', 18.0),
+                    const SizedBox(
+                      width: 14.0,
+                    ),
+                    Text(
+                      'Stop Session',
+                      style: Theme.of(context).textTheme.subtitle1,
+                    ),
+                  ],
+                ),
               ),
             ),
             const Padding(padding: EdgeInsets.only(bottom: 36.0)),
