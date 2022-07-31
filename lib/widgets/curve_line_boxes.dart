@@ -5,9 +5,11 @@ import 'package:mentalwaev/widgets/custom_dial.dart';
 
 class CustomCurveBoxes extends StatelessWidget {
   final Widget timeUnit;
+  final String time;
   const CustomCurveBoxes({
     Key? key,
     required this.timeUnit,
+    required this.time,
   }) : super(key: key);
 
   @override
@@ -24,6 +26,7 @@ class CustomCurveBoxes extends StatelessWidget {
         ),
         child: Center(
           child: CustomDial(
+            time: time,
             timeUnit: timeUnit,
           ),
         ),

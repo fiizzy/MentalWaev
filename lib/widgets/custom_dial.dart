@@ -3,9 +3,11 @@ import 'package:mentalwaev/theme/theme.dart';
 
 class CustomDial extends StatelessWidget {
   final Widget timeUnit;
+  final String time;
   const CustomDial({
     Key? key,
     required this.timeUnit,
+    required this.time,
   }) : super(key: key);
 
   @override
@@ -39,9 +41,8 @@ class CustomDial extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             timeUnit,
-            
             Text(
-              '5:49',
+              time,
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ],

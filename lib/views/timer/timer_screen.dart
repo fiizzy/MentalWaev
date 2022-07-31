@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mentalwaev/theme/theme.dart';
+import 'package:mentalwaev/enums/button_types.dart';
 import 'package:mentalwaev/utils/icon_framer.dart';
 import 'package:mentalwaev/utils/util.dart';
+import 'package:mentalwaev/widgets/button.dart';
 import 'package:mentalwaev/widgets/curve_line_boxes.dart';
+import 'package:mentalwaev/widgets/hannahs_app_bar.dart';
 
 class MeditationTimerScreen extends StatefulWidget {
   const MeditationTimerScreen({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class MeditationTimerScreen extends StatefulWidget {
 class _MeditationTimerScreenState extends State<MeditationTimerScreen> {
   @override
   Widget build(BuildContext context) {
+    String time = '05:49';
     Info.setWidth = MediaQuery.of(context).size.width;
     Info.setHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -23,64 +26,26 @@ class _MeditationTimerScreenState extends State<MeditationTimerScreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             const Padding(padding: EdgeInsets.only(top: 30.0)),
-            hannahsAppBar(),
+            const HannahsAppBar(),
             const Spacer(),
             CustomCurveBoxes(
+              time: time,
               timeUnit: Container(),
             ),
             const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: ElevatedButton(
+              child: Button(
+                context: context,
+                icon: iconFramer('alarm_off.png', 18.0),
+                text: 'Stop Session',
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: AppColors.negative,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    iconFramer('alarm_off.png', 18.0),
-                    const SizedBox(
-                      width: 14.0,
-                    ),
-                    Text(
-                      'Stop Session',
-                      style: Theme.of(context).textTheme.subtitle1,
-                    ),
-                  ],
-                ),
+                type: time == '0.0' ?ButtonTypes.positive : ButtonTypes.negative,
               ),
             ),
             const Padding(padding: EdgeInsets.only(bottom: 36.0)),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget hannahsAppBar() {
-    return Container(
-      width: Info.deviceWidth / 1.8,
-      padding: const EdgeInsets.fromLTRB(18.0, 6.0, 37.0, 6.0),
-      decoration: const BoxDecoration(
-        color: AppColors.gray85,
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(19.5),
-          bottomRight: Radius.circular(19.5),
-        ),
-      ),
-      child: Row(
-        children: [
-          iconFramer("sun-setting.png", 18.0),
-          const SizedBox(width: 12.0),
-          Text(
-            'Hannah\'s space',
-            style: Theme.of(context).textTheme.labelMedium,
-          ),
-        ],
       ),
     );
   }

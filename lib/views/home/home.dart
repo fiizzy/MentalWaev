@@ -30,6 +30,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: Utils.dialRectboxHeight - appBarHeight),
               CustomCurveBoxes(
+                time: '05:49',
                 timeUnit: Text(
                   'Mins',
                   style: Theme.of(context).textTheme.subtitle1,
