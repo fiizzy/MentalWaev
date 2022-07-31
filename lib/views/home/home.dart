@@ -37,6 +37,7 @@ class Home extends StatelessWidget {
             //   children: [Image.asset("assets/images/wave-2.png")],
             // ),
 
+
             SizedBox(height: Utils.dialRectboxHeight - appBarHeight),
             const CustomCurveBoxes(),
           ],
