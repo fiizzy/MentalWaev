@@ -18,12 +18,13 @@ Widget button(BuildContext context, String? icon, String text, ButtonTypes type,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        icon != null ? iconFramer(icon) : Container(),
+        icon != null ? iconFramer(icon, 30.0) : Container(),
         SpaceConst.horizontalOne,
-        Text(text,
-            style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                color:
-                    type == ButtonTypes.normal ? Colors.black : Colors.white)),
+        Text(
+          text,
+          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+              color: type == ButtonTypes.normal ? Colors.black : Colors.white),
+        ),
       ],
     ),
   );

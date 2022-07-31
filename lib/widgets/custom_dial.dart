@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mentalwaev/theme/theme.dart';
 
 class CustomDial extends StatelessWidget {
-  const CustomDial({Key? key}) : super(key: key);
+  final Widget timeUnit;
+  const CustomDial({
+    Key? key,
+    required this.timeUnit,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +17,16 @@ class CustomDial extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: AppColors.goldenGlow.withOpacity(0.5),
-              spreadRadius: 12,
-              blurRadius: 12,
+              color: AppColors.greenShadow.withOpacity(0.25),
+              spreadRadius: 5,
+              blurRadius: 21,
+              offset: const Offset(0, 14),
+            ),
+            BoxShadow(
+              color: AppColors.pinkShadow.withOpacity(0.55),
+              spreadRadius: 0,
+              blurRadius: 15,
+              offset: const Offset(8, -8),
             ),
           ],
           color: AppColors.darkGreen_2,
@@ -27,10 +38,8 @@ class CustomDial extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Mins',
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
+            timeUnit,
+            
             Text(
               '5:49',
               style: Theme.of(context).textTheme.bodyText1,

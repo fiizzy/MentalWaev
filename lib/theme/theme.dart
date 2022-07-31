@@ -14,14 +14,14 @@ class AppColors {
   static const Color negative_2 = Color(0xFFDDB3B3);
   static const Color positive = Color(0xFF009533);
   static const Color goldenGlow = Color(0xFFFF9436);
+  static const Color gray85 = Color(0xFF162C2C);
+  static const Color pinkShadow = Color(0xFFFF8B8B);
+  static const Color greenShadow = Color(0xFFC5FF8B);
 }
 
 TextTheme _buildTextTheme() {
   return TextTheme(
-    headline1: _style(
-      96.0,
-      FontWeight.normal,
-    ),
+    headline1: _style(96.0, FontWeight.normal),
     headline2: _style(60.0, FontWeight.bold),
     headline3: _style(36.0, FontWeight.bold),
     headline4: _style(48.0, null, fontFamily: 'Poppins-ExtraBold'),
@@ -34,15 +34,18 @@ TextTheme _buildTextTheme() {
     button: _style(18.0, FontWeight.normal),
     caption: _style(12.0, FontWeight.normal),
     overline: _style(16.0, FontWeight.normal),
+    labelMedium: _style(14.0, FontWeight.w400),
   );
 }
 
 /* This method optimizes the code and using in text theme in order to
 avoid repeating FontWeight and Fontsize */
-TextStyle _style(double s, FontWeight? w, {String? fontFamily}) => TextStyle(
-    fontSize: s,
-    fontWeight: w ?? FontWeight.normal,
-    fontFamily: fontFamily ?? 'Poppins-Regular');
+TextStyle _style(double size, FontWeight? fontWeight, {String? fontFamily}) =>
+    TextStyle(
+      fontSize: size,
+      fontWeight: fontWeight ?? FontWeight.normal,
+      fontFamily: fontFamily ?? 'Poppins-Regular',
+    );
 
 class AppTheme {
   ThemeData get themeData {
