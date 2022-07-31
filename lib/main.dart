@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const Home(),
         '/login': (context) => const SignUp(),
         '/timerScreen': (context) => const MeditationTimerScreen(),
+
       },
     );
   }

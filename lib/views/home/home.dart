@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
+
+
+
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:mentalwaev/enums/button_types.dart';
+import 'package:mentalwaev/utils/spaces.dart';
+import 'package:mentalwaev/widgets/button.dart';
+import 'package:mentalwaev/widgets/dialogs/confirmation_dialog_modal.dart';
+
 import 'package:mentalwaev/utils/util.dart';
+import 'package:mentalwaev/widgets/dialogs/set_timer_modal.dart';
+
+
 import 'package:mentalwaev/widgets/space_tag.dart';
 import '../../widgets/curve_line_boxes.dart';
 
@@ -18,22 +31,27 @@ class Home extends StatelessWidget {
     final appBarHeight = appBar.preferredSize.height;
     return Scaffold(
       appBar: appBar,
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/wave-2.png"),
-                ],
-              ),
-              SizedBox(height: Utils.dialRectboxHeight - appBarHeight),
-              CustomCurveBoxes(
-                time: '05:49',
-                timeUnit: Text(
-                  'Mins',
-                  style: Theme.of(context).textTheme.subtitle1,
+
+      body: Stack(children: [
+        Column(
+          children: [
+            // Column(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [Image.asset("assets/images/wave-2.png")],
+            // ),
+
+
+            SizedBox(height: Utils.dialRectboxHeight - appBarHeight),
+            const CustomCurveBoxes(),
+          ],
+        ),
+        Positioned(
+          top: Utils.dialRectboxHeight - 38,
+          left: Info.deviceWidth / 3,
+          child: Text(
+            'LIFETIME MEDITATION',
+            style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                  letterSpacing: 2,
                 ),
               ),
             ],
@@ -75,3 +93,21 @@ Positioned(
                   }),
                 ))
 */
+
+
+// Positioned(
+//             bottom: 10,
+//             child: Container(
+//               width: SpaceConst.deviceWidth(context),
+//               padding: EdgeInsets.all(SpaceConst.padding_20),
+//               child: button(
+//                   context, "hearts.png", "New Mediation", ButtonTypes.normal,
+//                   () {
+//                 SetTimerModal(
+//                     context: context,
+//                     onCancel: () {
+//                       Navigator.of(context).pop();
+//                     },
+//                     onConfirm: () {});
+//               }),
+//             ))
