@@ -31,13 +31,6 @@ class Home extends StatelessWidget {
       body: Stack(children: [
         Column(
           children: [
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Image.asset("assets/images/wave-2.png")],
-            ),
-
-
             SizedBox(height: Utils.dialRectboxHeight - appBarHeight),
             const CustomCurveBoxes(),
           ],
