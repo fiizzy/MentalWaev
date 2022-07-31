@@ -8,7 +8,7 @@ Widget spaceTag(BuildContext context) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        iconFramer("sun-setting.png"),
+        iconFramer("sun-setting.png", 30.0),
         SpaceConst.horizontalOne,
         const Text("Hannah's space")
       ],
