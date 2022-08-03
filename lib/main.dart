@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme().themeData,
-      initialRoute: "/newMeditation",
+      initialRoute: "/login",
       debugShowCheckedModeBanner: false,
       routes: {
         '/home': (context) => const Home(),
