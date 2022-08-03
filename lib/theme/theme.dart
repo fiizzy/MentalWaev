@@ -17,6 +17,7 @@ class AppColors {
   static const Color gray85 = Color(0xFF162C2C);
   static const Color pinkShadow = Color(0xFFFF8B8B);
   static const Color greenShadow = Color(0xFFC5FF8B);
+  static const Color gray95 = Color(0xFF959595);
 }
 
 TextTheme _buildTextTheme() {
