@@ -8,7 +8,7 @@ class HannahsAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Container(
+    return Container(
       width: Info.deviceWidth / 1.8,
       padding: const EdgeInsets.fromLTRB(18.0, 6.0, 37.0, 6.0),
       decoration: const BoxDecoration(
@@ -28,6 +28,6 @@ class HannahsAppBar extends StatelessWidget {
           ),
         ],
       ),
-    ); 
+    );
   }
 }

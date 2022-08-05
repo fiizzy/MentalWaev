@@ -21,31 +21,45 @@ class _MeditationTimerScreenState extends State<MeditationTimerScreen> {
     Info.setHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            const Padding(padding: EdgeInsets.only(top: 30.0)),
-            const HannahsAppBar(),
-            const Spacer(),
-            CustomCurveBoxes(
-              time: time,
-              timeUnit: Container(),
-            ),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Button(
-                context: context,
-                icon: iconFramer('alarm_off.png', 18.0),
-                text: 'Stop Session',
-                onPressed: () {},
-                type: time == '0.0' ?ButtonTypes.positive : ButtonTypes.negative,
+        body: Stack(children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Padding(padding: EdgeInsets.only(top: 30.0)),
+              const HannahsAppBar(),
+              const Spacer(),
+              CustomCurveBoxes(
+                time: time,
+                timeUnit: Container(),
               ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Button(
+                  context: context,
+                  icon: iconFramer('alarm_off.png', 18.0),
+                  text: 'Stop Session',
+                  onPressed: () {},
+                  type: time == '0.0'
+                      ? ButtonTypes.positive
+                      : ButtonTypes.negative,
+                ),
+              ),
+              const Padding(padding: EdgeInsets.only(bottom: 36.0)),
+            ],
+          ),
+          Positioned(
+            top: Utils.dialRectboxHeight - 15,
+            left: Info.deviceWidth / 3,
+            child: Text(
+              'LIFETIME MEDITATION',
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                    letterSpacing: 2,
+                  ),
             ),
-            const Padding(padding: EdgeInsets.only(bottom: 36.0)),
-          ],
-        ),
+          ),
+        ]),
       ),
     );
   }

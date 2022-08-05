@@ -2,7 +2,6 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 import 'package:mentalwaev/theme/theme.dart';
 import 'package:mentalwaev/utils/spaces.dart';
-import 'package:mentalwaev/views/home/home.dart';
 import 'package:mentalwaev/widgets/auth_cards.dart';
 
 class SignUp extends StatelessWidget {
@@ -30,7 +29,7 @@ class SignUp extends StatelessWidget {
                 "google.png",
                 "Sign in with Google",
                 () {
-                  Get.to(() => const Home());
+                  Get.toNamed('/timerScreen');
                 },
               ),
               SpaceConst.verticalOne,
