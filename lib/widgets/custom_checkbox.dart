@@ -4,12 +4,12 @@ import 'package:mentalwaev/theme/theme.dart';
 import 'package:mentalwaev/utils/spaces.dart';
 
 class CheckBoxTile extends StatelessWidget {
-  Function onChanged;
-  bool value;
-  Color activeColor;
-  String label;
+  final Function onChanged;
+  final bool value;
+  final Color activeColor;
+  final String label;
 
-  CheckBoxTile({
+  const CheckBoxTile({
     Key? key,
     required this.onChanged,
     required this.value,

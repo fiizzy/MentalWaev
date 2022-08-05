@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentalwaev/theme/theme.dart';
 import 'package:mentalwaev/views/auth/login.dart';
-import 'package:mentalwaev/views/home/home.dart';
 import 'package:mentalwaev/views/timer/timer_screen.dart';
 
 void main() {
@@ -21,10 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/login",
       debugShowCheckedModeBanner: false,
       routes: {
-        '/home': (context) => const Home(),
         '/login': (context) => const SignUp(),
         '/timerScreen': (context) => const MeditationTimerScreen(),
-
       },
     );
   }
