@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:mentalwaev/enums/button_types.dart';
-import 'package:mentalwaev/utils/spaces.dart';
-import 'package:mentalwaev/widgets/button.dart';
-import 'package:mentalwaev/widgets/dialogs/confirmation_dialog_modal.dart';
-
 import 'package:mentalwaev/utils/util.dart';
-import 'package:mentalwaev/widgets/dialogs/set_timer_modal.dart';
 
 import 'package:mentalwaev/widgets/space_tag.dart';
 import '../../widgets/curve_line_boxes.dart';
@@ -33,8 +25,8 @@ class Home extends StatelessWidget {
           Column(
             children: [
               SizedBox(height: Utils.dialRectboxHeight - appBarHeight),
-              CustomCurveBoxes(
-                timeUnit: Container(child: const Text("Min")),
+              const CustomCurveBoxes(
+                timeUnit: Text("Min"),
                 time: "23:45",
               ),
             ],

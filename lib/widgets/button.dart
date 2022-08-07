@@ -31,9 +31,13 @@ class Button extends StatelessWidget {
                 ? MaterialStateProperty.all<Color>(
                     AppColors.negative,
                   )
-                : MaterialStateProperty.all<Color>(
-                    AppColors.cyanAccent,
-                  ),
+                : type == ButtonTypes.normal
+                    ? MaterialStateProperty.all<Color>(
+                        AppColors.gray95,
+                      )
+                    : MaterialStateProperty.all<Color>(
+                        AppColors.cyanAccent,
+                      ),
         shape: MaterialStateProperty.all<OutlinedBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
