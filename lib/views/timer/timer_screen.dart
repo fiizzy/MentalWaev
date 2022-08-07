@@ -40,7 +40,8 @@ class _MeditationTimerScreenState extends State<MeditationTimerScreen> {
                 icon: iconFramer('alarm_off.png', 18.0),
                 text: 'Stop Session',
                 onPressed: () {},
-                type: time == '0.0' ?ButtonTypes.positive : ButtonTypes.negative,
+                type:
+                    time == '0.0' ? ButtonTypes.positive : ButtonTypes.negative,
               ),
             ),
             const Padding(padding: EdgeInsets.only(bottom: 36.0)),

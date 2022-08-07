@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mentalwaev/enums/button_types.dart';
+import 'package:mentalwaev/utils/icon_framer.dart';
+import 'package:mentalwaev/utils/spaces.dart';
 
 import 'package:mentalwaev/utils/util.dart';
+import 'package:mentalwaev/views/meditation/new_meditation_screen.dart';
+import 'package:mentalwaev/widgets/button.dart';
 
 import 'package:mentalwaev/widgets/space_tag.dart';
 import '../../widgets/curve_line_boxes.dart';
@@ -41,6 +47,20 @@ class Home extends StatelessWidget {
                   ),
             ),
           ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 40),
+              child: Button(
+                  context: context,
+                  icon: iconFramer("hearts.png", 30.0),
+                  text: "New Meditation",
+                  onPressed: () {
+                    Get.to(NewMeditationScreen());
+                  },
+                  type: ButtonTypes.normal),
+            ),
+          ),
         ],
       ),
     );
@@ -49,7 +69,6 @@ class Home extends StatelessWidget {
 
 /*
 Positioned(
-
                 bottom: 10,
                 child: Container(
                   width: SpaceConst.deviceWidth(context),
